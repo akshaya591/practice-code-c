@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int num,i;
+    scanf("%d",&num);
+    if((num%4==0)&&((num%100!=0)||(num%400==0)))
+    {
+            printf("\nLeap Year\n");
+    }
+    else
+    {
+        printf("\nNot Leap Year\n");
+    }
+    for(i=num+1;i<=num+10;i++)
+    {
+        if((i%4==0)&&((i%100!=0)||(i%400==0)))
+        {
+            printf("\n%d - Leap Year\n",i);
+        }
+        else
+        {
+            printf("\n%d - Not Leap Year\n",i);
+        }
+    }
+    
+}
