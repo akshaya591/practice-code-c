@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int i,upper,lower,sum,num;
+    scanf("%d%d",&upper,&lower);
+    for(num=upper;num<=lower;num++)
+    {
+        sum=0;
+    
+    {
+        for(i=1;i<=num/2;i++)
+        {
+        if(num%i==0)
+        {
+            sum+=i;
+        }
+        }
+        if(sum==num)
+        {
+            printf("%d ",num);
+        }
+    }
+    }
+  }
