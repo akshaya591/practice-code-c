@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+    int first,num,cd=1,sum=0,i;
+    scanf("%d%d%d",&first,&num,&cd);
+    for(i=0;i<num;i++)
+    {
+        int term=first+i*cd;
+        printf("%d ",term);
+        sum+=term;
+    }
+    printf("Sum : %d ",sum);
+}
