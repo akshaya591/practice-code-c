@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int num, sume = 0, sumo = 0;
+    
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    
+    if(num<0)
+    {
+      num=-num;
+    }
+   
+    int temp = num; 
+    while (temp != 0) {
+        int digit = temp % 10; 
+        temp /= 10; 
+
+        if (digit % 2 == 0) {
+            sume += digit; 
+        } else {
+            sumo += digit; 
+        }
+    }
+    
+    printf( "%d\n", sume);
+    printf("%d\n", sumo);
+
+    return 0;
+    }
