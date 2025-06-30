@@ -1,0 +1,36 @@
+
+#include<stdio.h>
+int main()
+{
+	int i,j,num;
+	char term;
+	if (scanf("%d%c",&num,&term)==2 && (term=='\n'));
+	{
+		if(num<0 || num==0)
+		{
+			printf("Invalid Input");
+		}
+        else
+		{
+			for(i=1; i<=num; i++)
+			{
+				for(j=1; j<=num; j++)
+				{
+					if(i==1||i==num||j==1||j==num)
+					{
+						printf("*");
+					}
+					else
+					{
+						printf(" ");
+					}
+				}
+				printf("\n");
+			}
+		}
+	}
+    else
+		{
+			printf("Invalid Input");
+		}
+	}
