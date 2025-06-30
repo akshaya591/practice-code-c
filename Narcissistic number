@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int i,lastdigit,cube=1,num,sum=0,d;
+    scanf("%d",&num);
+    d=num;
+    for(i=1;i<=num;i++)
+    {
+        lastdigit=num%10;
+        cube=lastdigit*lastdigit*lastdigit;
+        sum+=cube;
+        
+        num/=10;
+    }
+    if(d==sum)
+    {
+        printf("Narcissist");
+    }
+    else
+    {
+        printf("Not Narcissist");
+    }
+}
