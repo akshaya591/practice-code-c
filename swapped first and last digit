@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int num,swappednum,lastdigit,firstdigit,digits,isnegative=0;
+    scanf("%d",&num);
+    if(num<0)
+    {
+        isnegative=1;
+        num=-num;
+    }
+    lastdigit=num%10;
+    digits=(int)log10(num);
+    firstdigit=(int)num/pow(10,digits);
+    swappednum=lastdigit;
+    swappednum*=(int)pow(10,digits);
+    swappednum+=num%(int)pow(10,digits);
+    swappednum-=lastdigit;
+    swappednum+=firstdigit;
+    
+    if(isnegative)
+    {
+        swappednum=-swappednum;
+        printf("%d",swappednum);
+    }
+    else
+    {
+        printf("%d",swappednum);
+    }
+    
+}
