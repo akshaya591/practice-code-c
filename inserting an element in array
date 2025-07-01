@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define maxi 1000
+int main()
+{
+    int i,num,insert,pos;
+    int arr[maxi];
+    scanf("%d",&num);
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    scanf("%d",&insert);
+    scanf("%d",&pos);
+    if(pos>num+1 || pos<=0)
+    {
+        printf("Invalid");
+    }
+    else
+    {
+        for(i=num;i>=pos;i--)
+        {
+            arr[i]=arr[i-1];
+        }
+        arr[pos-1]=insert;
+        num++;
+        for(i=0;i<num;i++)
+        {
+            printf("%d ",arr[i]);
+        }
+    }
+}
