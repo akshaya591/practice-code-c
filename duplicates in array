@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define MAXI 100
+
+int main() {
+    int i, n, j, count;
+    int ele[MAXI], freq[MAXI] = {0};  
+    int processed[MAXI] = {0};        
+    int totalDuplicates = 0;
+
+    
+    if (scanf("%d", &n) != 1 || n <= 0 || n > MAXI) 
+    {
+        printf("Invalid input\n");
+        return 1;
+    }
+
+    
+    for (i = 0; i < n; i++) 
+    {
+        if (scanf("%d", &ele[i]) != 1) 
+        {
+            printf("Invalid input\n");
+            return 1;
+        }
+    }
+
+    
+    for (i = 0; i < n; i++) 
+    {
+        if (processed[i] == 0) 
+        {  
+            count = 1;
+            for (j = i + 1; j < n; j++) 
+            {
+                if (ele[i] == ele[j]) {
+                    count++;
+                    processed[j] = 1;  
+                }
+            }
+            if (count > 1) {
+                totalDuplicates += (count - 1); 
+            }
+        }
+    }
+
+    
+    printf("%d\n", totalDuplicates);
+
+    return 0;
+}
