@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define maxi 1000
+int main()
+{
+    int i,num;
+    int source[maxi],dest[maxi];
+    scanf("%d",&num);
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&source[i]);
+    }
+    for(i=0;i<num;i++)
+    {
+        dest[i]=source[i];
+    }
+    for(i=0;i<num;i++)
+    {
+        printf("%d ",source[i]);
+    }
+    printf("\n");
+    for(i=0;i<num;i++)
+    {
+        printf("%d ",dest[i]);
+    }
+    
+}
