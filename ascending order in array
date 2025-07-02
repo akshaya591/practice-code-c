@@ -1,0 +1,54 @@
+#include <stdio.h>
+#define maxi 100
+
+int main() {
+    int i, j, count = 0, count1 = 0, temp = 0;
+    int ele1[maxi], ele2[maxi], c[maxi * 2];
+    int a, b;
+
+    if (scanf("%d", &a) != 1 || a <= 0) {
+        printf("Invalid\n");
+        return 1;
+    }
+
+    for (i = 0; i < a; i++) {
+        if (scanf("%d", &ele1[i]) != 1) {
+            printf("Invalid\n");
+            return 1;
+        }
+    }
+
+    if (scanf("%d", &b) != 1 || b <= 0) {
+        printf("Invalid\n");
+        return 1;
+    }
+
+    for (i = 0; i < b; i++) {
+        if (scanf("%d", &ele2[i]) != 1) {
+            printf("Invalid\n");
+            return 1;
+        }
+    }
+
+    for (i = 0; i < a; i++) {
+        c[count++] = ele1[i];
+    }
+    for (i = 0; i < b; i++) {
+        c[count++] = ele2[i];
+    }
+
+    for (i = 0; i < count - 1; i++) {
+        for (j = i + 1; j < count; j++) {
+            if (c[i] > c[j]) {  
+                temp = c[i];
+                c[i] = c[j];
+                c[j] = temp;
+            }
+        }
+    }
+    for (i = 0; i < count; i++) {
+        printf("%d ", c[i]);
+    }
+
+    return 0;
+}
