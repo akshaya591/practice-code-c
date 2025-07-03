@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int ele[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&ele[i]);
+    }
+    int tot_sum=0;
+    int left_sum=0;
+    if(n<=0)
+    {
+        printf("Invalid input");
+        return 1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        tot_sum=tot_sum+ele[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        int right_sum=tot_sum-left_sum-ele[i];
+    
+    if(left_sum==right_sum)
+    {
+        printf("Equillibrium index:%d",i);
+        return 0;
+    }
+    left_sum+=ele[i];
+    }
+    printf("no equillibrium index found");
+    return 0;
+}
