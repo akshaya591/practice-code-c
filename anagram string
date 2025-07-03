@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char a[100];
+    char b[100];
+    int sum=0;
+    int s=0;
+    fgets(a,sizeof(a),stdin);
+    fgets(b,sizeof(b),stdin);
+    a[strcspn(a,"\n")]='\0';
+    b[strcspn(b,"\n")]='\0';
+    for(int i=0;a[i]!='\0';i++)
+    {
+        sum+=a[i];
+    }
+    for(int i=0;a[i]!='\0';i++)
+    {
+        s+=b[i];
+    }
+    if(sum==s)
+    {
+        printf("Anagram");
+    }
+    else
+    {
+        printf("Not Anagram");
+    }
+}
